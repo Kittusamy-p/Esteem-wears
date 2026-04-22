@@ -1,7 +1,20 @@
+export type ProductLink = {
+  platform: string;
+  url: string;
+  rating: number;
+  seller: string;
+};
+
+export type ProductSize = {
+  size: string;
+  price: number;
+};
+
 export type Product = {
   slug: string;
   name: string;
   images: string[];
-  sizes: { size: string; price: number }[];
-  links: { platform: string; url: string; rating: number }[];
+  sizeChart?: string;
+  sizes: ProductSize[];
+  links: ProductLink[];
 };

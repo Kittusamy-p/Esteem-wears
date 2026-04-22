@@ -1,65 +1,123 @@
 import json
+import os
 
 FILE_PATH = "men.json"
 
-# Load existing data
-try:
-    with open(FILE_PATH, "r", encoding="utf-8") as file:
-        data = json.load(file)
-        if not isinstance(data, list):
-            data = []
-except (FileNotFoundError, json.JSONDecodeError):
-    data = []
+def load_data():
+    if not os.path.exists(FILE_PATH):
+        return []
+    with open(FILE_PATH, "r", encoding="utf-8") as f:
+        try:
+            return json.load(f)
+        except json.JSONDecodeError:
+            return []
 
-print("\n🛒 Add New Product\n")
+def save_data(data):
+    with open(FILE_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2)
 
-# Basic details
-slug = input("Enter slug: ")
-name = input("Enter product name: ")
+def fix_slug(slug):
+    return slug.replace(" ", "-")
 
-# Images
-images = []
-img_count = int(input("How many images? "))
-for i in range(img_count):
-    img = input(f"Image {i+1} path: ")
-    images.append(img)
+def fix_image(img):
+    if not img.startswith("/images/"):
+        return "/images/" + img
+    return img
 
-# Sizes
-sizes = []
-size_count = int(input("\nHow many sizes? "))
-for i in range(size_count):
-    size = input(f"Size {i+1} (e.g. 20): ")
-    price = int(input(f"Price for size {size}: "))
-    sizes.append({"size": size, "price": price})
+def input_sizes():
+    sizes = []
+    print("\nEnter sizes (type 'done' to stop):")
 
-# Links
-links = []
-platforms = ["amazon", "flipkart", "meesho"]
+    while True:
+        size = input("Size: ").strip()
+        if size.lower() == "done":
+            break
 
-print("\nEnter platform details:")
-for platform in platforms:
-    url = input(f"URL for {platform}: ")
-    rating = float(input(f"Rating for {platform}: "))
-    links.append({
-        "platform": platform,
-        "url": url,
-        "rating": rating
-    })
+        price = input("Price: ").strip()
+        try:
+            price = int(price)
+        except:
+            print("Invalid price, try again.")
+            continue
 
-# Final product object
-product = {
-    "slug": slug,
-    "name": name,
-    "images": images,
-    "sizes": sizes,
-    "links": links
-}
+        sizes.append({
+            "size": size,
+            "price": price
+        })
 
-# Add to list
-data.append(product)
+    return sizes
 
-# Save file
-with open(FILE_PATH, "w", encoding="utf-8") as file:
-    json.dump(data, file, indent=4, ensure_ascii=False)
+def input_links():
+    links = []
+    print("\nEnter links (type 'done' to stop):")
 
-print("\n✅ Product added successfully!")
+    while True:
+        platform = input("Platform (amazon/flipkart/meesho): ").strip().lower()
+        if platform == "done":
+            break
+
+        seller = input("Seller: ").strip()
+        url = input("URL (leave empty to skip amazon): ").strip()
+        rating = input("Rating: ").strip()
+
+        # ❌ Skip amazon if no URL
+        if platform == "amazon" and not url:
+            print("Skipping Amazon (no URL)")
+            continue
+
+        try:
+            rating = float(rating)
+        except:
+            rating = 0
+
+        links.append({
+            "platform": platform,
+            "seller": seller,
+            "url": url,
+            "rating": rating
+        })
+
+    return links
+
+def main():
+    print("\n=== PRODUCT BUILDER ===\n")
+
+    slug = fix_slug(input("Slug: ").strip())
+    name = input("Product Name: ").strip()
+
+    # images
+    images = []
+    print("\nEnter images (type 'done' to stop):")
+    while True:
+        img = input("Image: ").strip()
+        if img.lower() == "done":
+            break
+        images.append(fix_image(img))
+
+    # size chart
+    size_chart = input("\nSize Chart Image: ").strip()
+    size_chart = fix_image(size_chart) if size_chart else ""
+
+    # sizes
+    sizes = input_sizes()
+
+    # links
+    links = input_links()
+
+    product = {
+        "slug": slug,
+        "name": name,
+        "images": images,
+        "sizeChart": size_chart,
+        "sizes": sizes,
+        "links": links
+    }
+
+    data = load_data()
+    data.append(product)
+    save_data(data)
+
+    print("\n✔ Product added successfully!")
+
+if __name__ == "__main__":
+    main()
