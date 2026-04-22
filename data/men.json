@@ -1,0 +1,72 @@
+[
+  {
+    "slug": "mens-cotton-brief",
+    "name": "Mens Cotton Brief",
+    "images": ["/images/sample1.webp"],
+    "sizes": [
+      { "size": "95", "price": 440 },
+      { "size": "100", "price": 460 }
+    ],
+    "links": [
+      { "platform": "amazon", "url": "#", "rating": 4.3 },
+      { "platform": "flipkart", "url": "#", "rating": 4.1 },
+      { "platform": "meesho", "url": "#", "rating": 3.9 }
+    ]
+  },
+  {
+    "slug": "mens-vest",
+    "name": "Mens Cotton Vest",
+    "images": ["/images/sample2.webp"],
+    "sizes": [
+      { "size": "95", "price": 400 },
+      { "size": "100", "price": 420 }
+    ],
+    "links": [
+      { "platform": "amazon", "url": "#", "rating": 4.5 },
+      { "platform": "flipkart", "url": "#", "rating": 4.2 },
+      { "platform": "meesho", "url": "#", "rating": 4.0 }
+    ]
+  },
+  {
+    "slug": "mens-combo-pack",
+    "name": "Mens Combo Pack",
+    "images": ["/images/sample3.webp"],
+    "sizes": [
+      { "size": "95", "price": 850 },
+      { "size": "100", "price": 900 }
+    ],
+    "links": [
+      { "platform": "amazon", "url": "#", "rating": 4.4 },
+      { "platform": "flipkart", "url": "#", "rating": 4.2 },
+      { "platform": "meesho", "url": "#", "rating": 3.8 }
+    ]
+  },
+  {
+    "slug": "mens-printed-brief",
+    "name": "Mens Printed Brief",
+    "images": ["/images/sample4.webp"],
+    "sizes": [
+      { "size": "95", "price": 460 },
+      { "size": "100", "price": 480 }
+    ],
+    "links": [
+      { "platform": "amazon", "url": "#", "rating": 4.1 },
+      { "platform": "flipkart", "url": "#", "rating": 4.0 },
+      { "platform": "meesho", "url": "#", "rating": 3.7 }
+    ]
+  },
+  {
+    "slug": "mens-sleeveless-vest",
+    "name": "Mens Sleeveless Vest",
+    "images": ["/images/sample5.webp"],
+    "sizes": [
+      { "size": "95", "price": 420 },
+      { "size": "100", "price": 440 }
+    ],
+    "links": [
+      { "platform": "amazon", "url": "#", "rating": 4.6 },
+      { "platform": "flipkart", "url": "#", "rating": 4.3 },
+      { "platform": "meesho", "url": "#", "rating": 4.1 }
+    ]
+  }
+]
