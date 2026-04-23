@@ -1,7 +1,9 @@
 import json
 import os
+import shutil
 
 FILE_PATH = "men.json"
+BASE_IMAGE_DIR = "../public/images"  # adjust if needed
 
 def load_data():
     if not os.path.exists(FILE_PATH):
@@ -17,12 +19,60 @@ def save_data(data):
         json.dump(data, f, indent=2)
 
 def fix_slug(slug):
-    return slug.replace(" ", "-")
+    return slug.strip().replace(" ", "-")
 
-def fix_image(img):
-    if not img.startswith("/images/"):
-        return "/images/" + img
-    return img
+# ✅ FIXED (now uses slug properly)
+def fix_image(img, slug):
+    filename = os.path.basename(img)
+    return f"/images/{slug}/{filename}"
+
+# ✅ CREATE FOLDER
+def create_product_folder(slug):
+    folder_path = os.path.join(BASE_IMAGE_DIR, slug)
+
+    os.makedirs(folder_path, exist_ok=True)
+
+    print(f"📁 Folder created: {folder_path}")
+    return folder_path
+
+def input_images(slug, folder_path):
+    images = []
+    print("\nEnter image file paths (type 'done' to stop):")
+
+    while True:
+        img = input("Image path (local file): ").strip()
+        if img.lower() == "done":
+            break
+
+        if not os.path.exists(img):
+            print("❌ File not found")
+            continue
+
+        filename = os.path.basename(img)
+        dest = os.path.join(folder_path, filename)
+
+        shutil.copy(img, dest)  # copy image into product folder
+
+        images.append(fix_image(filename, slug))
+
+    return images
+
+def input_size_chart(slug, folder_path):
+    img = input("\nSize Chart Image path: ").strip()
+
+    if not img:
+        return ""
+
+    if not os.path.exists(img):
+        print("❌ File not found, skipping size chart")
+        return ""
+
+    filename = os.path.basename(img)
+    dest = os.path.join(folder_path, filename)
+
+    shutil.copy(img, dest)
+
+    return fix_image(filename, slug)
 
 def input_sizes():
     sizes = []
@@ -57,13 +107,8 @@ def input_links():
             break
 
         seller = input("Seller: ").strip()
-        url = input("URL (leave empty to skip amazon): ").strip()
+        url = input("URL: ").strip()
         rating = input("Rating: ").strip()
-
-        # ❌ Skip amazon if no URL
-        if platform == "amazon" and not url:
-            print("Skipping Amazon (no URL)")
-            continue
 
         try:
             rating = float(rating)
@@ -79,24 +124,36 @@ def input_links():
 
     return links
 
-def main():
-    print("\n=== PRODUCT BUILDER ===\n")
+# ✅ NEW: product details (max 5)
+def input_details():
+    details = []
+    print("\nEnter product details (max 5, type 'done' to stop):")
 
-    slug = fix_slug(input("Slug: ").strip())
+    while len(details) < 5:
+        point = input(f"Point {len(details)+1}: ").strip()
+
+        if point.lower() == "done":
+            break
+
+        if point:
+            details.append(point)
+
+    return details
+
+def main():
+    print("\n=== PRODUCT BUILDER (PRO VERSION) ===\n")
+
+    slug = fix_slug(input("Slug: "))
     name = input("Product Name: ").strip()
 
+    # ✅ create folder
+    folder_path = create_product_folder(slug)
+
     # images
-    images = []
-    print("\nEnter images (type 'done' to stop):")
-    while True:
-        img = input("Image: ").strip()
-        if img.lower() == "done":
-            break
-        images.append(fix_image(img))
+    images = input_images(slug, folder_path)
 
     # size chart
-    size_chart = input("\nSize Chart Image: ").strip()
-    size_chart = fix_image(size_chart) if size_chart else ""
+    size_chart = input_size_chart(slug, folder_path)
 
     # sizes
     sizes = input_sizes()
@@ -104,20 +161,25 @@ def main():
     # links
     links = input_links()
 
+    # details
+    details = input_details()
+
     product = {
         "slug": slug,
         "name": name,
         "images": images,
         "sizeChart": size_chart,
         "sizes": sizes,
-        "links": links
+        "links": links,
+        "details": details
     }
 
     data = load_data()
     data.append(product)
     save_data(data)
 
-    print("\n✔ Product added successfully!")
+    print("\n✅ Product added successfully!")
+    print(f"📦 Images stored in /images/{slug}/")
 
 if __name__ == "__main__":
     main()

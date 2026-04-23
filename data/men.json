@@ -3,33 +3,33 @@
     "slug": "Men-Briefs",
     "name": "Esteem Men Cotton Briefs (Combo Pack of 5)",
 
-    "images": ["/images/men-brief.png"],
+    "images": ["/images/Men-Briefs/men-brief.png"],
 
-    "sizeChart": "/images/size-chart-men-brief.png",
+    "sizeChart": "/images/Men-Briefs/size-chart-men-brief.png",
 
     "sizes": [
       {
-        "size": "85",
+        "size": "85 cm",
         "price": 315
       },
       {
-        "size": "90",
+        "size": "90 cm",
         "price": 320
       },
       {
-        "size": "95",
+        "size": "95 cm",
         "price": 325
       },
       {
-        "size": "100",
+        "size": "100 cm",
         "price": 330
       },
       {
-        "size": "105",
+        "size": "105 cm",
         "price": 335
       },
       {
-        "size": "110",
+        "size": "110 cm",
         "price": 340
       }
     ],
@@ -53,6 +53,13 @@
         "url": "https://www.meesho.com/esteem-mens-solid-cotton-briefs-combo-pack-of-5/p/7m2yn9?ms=2&source=Meri+Shop",
         "rating": 4.3
       }
+    ],
+    "details": [
+      "100% Cotton Fabric",
+      "Breathable & Sweat Absorbent",
+      "Soft Elastic Waistband",
+      "Durable Stitching",
+      "Assorted colors combo pack of 5"
     ]
   }
 ]
