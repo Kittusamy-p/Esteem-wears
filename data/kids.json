@@ -1,72 +1,71 @@
 [
   {
-    "slug": "kids-cotton-brief",
-    "name": "Kids Cotton Brief",
-    "images": ["/images/sample1.webp"],
+    "slug": "-striped-trunk-pack-of-10",
+    "name": "Esteem Girls Innerwear Cotton Striped Trunk Drawer Panties (Pack of 10)",
+    "images": [
+      "/images/-striped-trunk-pack-of-10/image.py"
+    ],
+    "sizeChart": "/images/-striped-trunk-pack-of-10/#",
     "sizes": [
-      { "size": "20", "price": 200 },
-      { "size": "22", "price": 220 }
+      {
+        "size": "1 - 2 years",
+        "price": 392
+      },
+      {
+        "size": "2 - 3 years",
+        "price": 399
+      },
+      {
+        "size": "3 - 4 years",
+        "price": 399
+      },
+      {
+        "size": "4 - 5 years",
+        "price": 399
+      },
+      {
+        "size": "5 - 6",
+        "price": 399
+      },
+      {
+        "size": "7 - 8 years",
+        "price": 406
+      },
+      {
+        "size": "8 - 9 years",
+        "price": 406
+      },
+      {
+        "size": "10 - 11 years",
+        "price": 439
+      }
     ],
     "links": [
-      { "platform": "amazon", "url": "#", "rating": 4.1 },
-      { "platform": "flipkart", "url": "#", "rating": 4.0 },
-      { "platform": "meesho", "url": "#", "rating": 3.9 }
-    ]
-  },
-  {
-    "slug": "kids-vest",
-    "name": "Kids Cotton Vest",
-    "images": ["/images/sample2.webp"],
-    "sizes": [
-      { "size": "20", "price": 180 },
-      { "size": "22", "price": 200 }
+      {
+        "platform": "flipkart",
+        "seller": "Keyar Exports",
+        "url": "https://www.flipkart.com/esteem-brief-boys/p/itmeswxxrx8jqszn?pid=KBEESWXYPHYE4RVC",
+        "rating": 4.1
+      },
+      {
+        "platform": "amazon",
+        "seller": "Esteem",
+        "url": "https://www.amazon.in//Esteem-Innerwear-Striped-Panties-Multicolour/dp/B01C5UNIYC?dib=eyJ2IjoiMSJ9.WRc9uyYF_YFgDSt8ZLfU-I1uDzSVR5k58FasZJh79PjYUdZZhytr0QV6lbteDhH_h77Pg1AcPuJPHBQLkc1yuUBOdXKcMCWc50SgGHBp7ZTXtJ6LcatGPiOrSJ5byQPcSHC4Mu44r3QqNOiiPGbePBk0Bi0wKGAwghaADU9J_iO0anJJg6q6WyUbaJfem_LrX6e-1uHBlKGta7fBa3KFqmBC7xsuRrHwSYvbj8pI-c_9iN1hf24sjF5qeYISYscb7OyxZUWizYKpxF2ljSurjDlReXlewAXQRDh_IHQ3M1M.Kg3PFnfudfz7MK9ca3Rptfa2Fx6T_GM_TyPPxHLwE9g",
+        "rating": 4.2
+      },
+      {
+        "platform": "meesho",
+        "seller": "KEYAR EXPORTS",
+        "url": "https://www.meesho.com/esteem-boys-cotton-innerwear-drawer-brief-pack-of-10/p/7hrhzg",
+        "rating": 4.2
+      }
     ],
-    "links": [
-      { "platform": "amazon", "url": "#", "rating": 4.3 },
-      { "platform": "flipkart", "url": "#", "rating": 4.1 },
-      { "platform": "meesho", "url": "#", "rating": 3.8 }
-    ]
-  },
-  {
-    "slug": "kids-combo-pack",
-    "name": "Kids Combo Pack",
-    "images": ["/images/sample3.webp"],
-    "sizes": [
-      { "size": "20", "price": 350 },
-      { "size": "22", "price": 380 }
-    ],
-    "links": [
-      { "platform": "amazon", "url": "#", "rating": 4.2 },
-      { "platform": "flipkart", "url": "#", "rating": 4.0 },
-      { "platform": "meesho", "url": "#", "rating": 3.7 }
-    ]
-  },
-  {
-    "slug": "kids-printed-brief",
-    "name": "Kids Printed Brief",
-    "images": ["/images/sample4.webp"],
-    "sizes": [
-      { "size": "20", "price": 210 },
-      { "size": "22", "price": 230 }
-    ],
-    "links": [
-      { "platform": "amazon", "url": "#", "rating": 4.0 },
-      { "platform": "flipkart", "url": "#", "rating": 3.9 },
-      { "platform": "meesho", "url": "#", "rating": 3.6 }
-    ]
-  },
-  {
-    "slug": "kids-sleeveless-vest",
-    "name": "Kids Sleeveless Vest",
-    "images": ["/images/sample5.webp"],
-    "sizes": [
-      { "size": "20", "price": 190 },
-      { "size": "22", "price": 210 }
-    ],
-    "links": [
-      { "platform": "amazon", "url": "#", "rating": 4.4 },
-      { "platform": "flipkart", "url": "#", "rating": 4.2 },
-      { "platform": "meesho", "url": "#", "rating": 3.9 }
+    "details": [
+      "Unisex Fit",
+      "Great comfort",
+      "100% pure cotton",
+      "Non tearable stiching",
+      "Vibrantly stripped pack of 10"
     ]
   }
 ]

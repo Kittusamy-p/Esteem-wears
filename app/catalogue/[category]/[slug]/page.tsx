@@ -89,7 +89,7 @@ export default function ProductPage() {
           className="md:col-span-2 bg-white rounded-xl p-4"
         >
           {/* MAIN IMAGE */}
-          <div className="relative w-full h-[400px] group overflow-hidden">
+          <div className="relative w-full h-100 group overflow-hidden">
             <Image
               src={product.images[activeImg]}
               alt={product.name}
@@ -213,7 +213,7 @@ export default function ProductPage() {
               <ul className="space-y-2 text-sm text-gray-700">
                 {product.details.slice(0, 5).map((point, i) => (
                   <li key={i} className="flex items-start gap-2">
-                    <span className="text-yellow-500 mt-[2px]">✔</span>
+                    <span className="text-yellow-500 mt-0.5">✔</span>
                     <span>{point}</span>
                   </li>
                 ))}
