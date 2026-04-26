@@ -7,7 +7,7 @@ export default function About() {
   return (
     <div
       className="px-4 md:px-10 py-10 max-w-6xl mx-auto 
-    bg-gradient-to-br from-yellow-50 via-white to-pink-50 rounded-xl"
+    bg-linear-to-br from-yellow-50 via-white to-pink-50 rounded-xl"
     >
       {/* HERO */}
       <motion.div
@@ -35,7 +35,7 @@ export default function About() {
             key={i}
             whileHover={{ scale: 1.08 }}
             className="bg-white border rounded-xl p-6 text-center shadow-md 
-      hover:shadow-xl transition h-full min-h-[120px] flex flex-col justify-center"
+      hover:shadow-xl transition h-full min-h-30 flex flex-col justify-center"
           >
             <h3 className="text-3xl font-bold text-yellow-500">{item.value}</h3>
             <p className="text-gray-500 text-sm">{item.label}</p>
@@ -121,7 +121,7 @@ export default function About() {
             <motion.div
               whileHover={{ scale: 1.08 }}
               className="rounded-xl p-6 text-white 
-              bg-gradient-to-br from-red-500 to-yellow-500 shadow-lg"
+              bg-linear-to-brrom-red-500 to-yellow-500 shadow-lg"
             >
               <h3 className="text-lg font-semibold">Amazon</h3>
               <p className="text-sm opacity-90">Prime Seller</p>
@@ -138,7 +138,7 @@ export default function About() {
             <motion.div
               whileHover={{ scale: 1.08 }}
               className="rounded-xl p-6 text-white 
-              bg-gradient-to-br from-blue-500 to-yellow-300 shadow-lg"
+              bg-linear-to-br from-blue-500 to-yellow-300 shadow-lg"
             >
               <h3 className="text-lg font-semibold">Flipkart</h3>
               <p className="text-sm opacity-90">Golden Seller</p>
@@ -155,7 +155,7 @@ export default function About() {
             <motion.div
               whileHover={{ scale: 1.08 }}
               className="rounded-xl p-6 text-white 
-              bg-gradient-to-br from-pink-500 to-pink-700 shadow-lg"
+              bg-linear-to-br from-pink-500 to-pink-700 shadow-lg"
             >
               <h3 className="text-lg font-semibold">Meesho</h3>
               <p className="text-sm opacity-90">Top Seller</p>

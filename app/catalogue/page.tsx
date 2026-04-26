@@ -6,7 +6,18 @@ import { motion } from "framer-motion";
 
 export default function Catalogue() {
   return (
-    <div className="px-4 md:px-10 py-6 min-h-screen">
+    <div
+      className="px-4 md:px-10 py-6 min-h-screen"
+      style={{
+        background:
+          "linear-gradient(150deg, #141414 0%, #1e1a16 60%, #241e18 100%)",
+        position: "relative",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        paddingTop: "88px",
+      }}
+    >
       {/* TITLE */}
       <h1 className="text-3xl md:text-5xl font-bold mb-10 text-center">
         Catalogue
